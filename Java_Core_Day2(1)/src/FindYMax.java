@@ -4,14 +4,18 @@ public class FindYMax {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int x = sc.nextInt();
-        System.out.println(Find(n, x));
+        Find(n, x);
     }
-    public static int Find(int n, int x){
-        int y = 0;
-        while(n > 0){
-            n /= x;
-            y += n;
+    public static void Find(int n, int x){
+        long factorial = 1;
+        for(int i = 1; i <= n; i++){
+            factorial *= i;
         }
-        return y;
+        int y = 0;
+        while(factorial % x == 0){
+            factorial /= x;
+            y++;
+        }
+        System.out.println(y);
     }
 }

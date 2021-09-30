@@ -11,8 +11,8 @@ public class ShowTimeUsingThread extends Thread {
                 SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss aa");
                 while(true){
                     Date currentTime = new Date();
-                    String s = time.format(currentTime);
-                    System.out.println(s);
+                    String showCurrentTime = time.format(currentTime);
+                    System.out.println("Current time is: " + showCurrentTime);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
